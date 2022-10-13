@@ -1,0 +1,128 @@
+JS 
+	JS  -  loops, array, object functions map set, array.prototype functions, strings, this closure, hoisting TDZ, call apply bind
+	JS adv  - callbakcs, promises, classes this, async & await, async programming, dom manupulation
+
+HTML
+	tags/ properties
+
+CSS 
+	CSS
+	CSS adv
+
+
+ hoisting
+
+var and function allows hoisting
+in var the hoisted value will be the predefined value
+and in function (except anamous and arrow function) the hoisted value will be the whole function
+
+let and const goes in TDZ(temporal dead zone)
+
+
+
+Operators in js
+
+1. Assignment : =
+2. comparision or conditional: >=,<=,===,==,!=
+3. arthematic: + - * / %
+4. bitwise : & and |
+5. logical operators : nor && ||
+
+
+
+
+// logical block of expression is called function\
+// function calling
+// function are first call object that mean we can assign function to a varibale or function behave like variable in js
+// return breaks execution context of function and goes back to the calling
+
+function a(){
+
+console.log('hello')
+return 'bye'
+}
+
+function b(value){     // pramarter but value is behaving like a variable
+console.log(value)
+}
+let c = ()=>{
+console.log('hello')
+return 'bye'
+}
+b(a)
+
+
+// continue
+
+function abc(){
+	for(let i=0;i<15;i++){
+  	if(i%5 === 0){
+    	continue;
+     }
+    console.log(i)
+  }
+  console.log('hello')
+}
+
+abc()
+
+
+
+const a = 'dee'
+const b = 5
+console.log(a-b)
+
+
+// + behave as arthematic and concatinating operator
+// so in case if 1 string and 1 number is there ti will concatenate
+// but in case of *,/,- they will convert string to number and peform action
+// + behave as arthematic and concatinating operator
+
+// so in case if 1 string and 1 number is there ti will concatenate
+// but in case of *,/,- they will convert string to number and peform action4
+
+// NaN :- Not a number
+
+// type convertion is convert one data type to another
+// implicit type convertion is type of conversuon convert one data type to another automatically
+// explicit type convertion ___________________________________________ manually
+
+
+// from string to number we use parseInt or + symbol
+// from number to string we use toString
+// to boolean !!
+
+
+// falsey :- '', null, undefined and 0 
+// truthy :- ' ', 'dee', 1, '0' and empty array is true , empty object is ture
+
+//Array.prototype methods 
+// Prototype is a kind of inheritance where the function will inherit properties of the parent
+
+
+//map, forEach, filter, find, reducer
+
+// arr.map function takes one call back and that that call back take 3 arguments(all argumenst are optional) (order of arguments (element, index, array)) and return us a new array with returned value of the callback function
+
+const arr = ['deepak','Ram', "ramesh",'mahesh','NTR']
+
+
+const newArr = arr.map((element,index,array)=>{console.log(element,index,array);return index})  // behave like a for of loop
+
+console.log(newArr)
+
+//arr.forEach function takes one call back and that that call back take 3 arguments(all argumenst are optional) (order of arguments (element, index, array))  and it will return undefined
+
+// map is used when we need to create and new array from an old array by doing some changes
+// forEach is used like for Of loop
+
+const arr = ['deepak','Ram', "ramesh",'mahesh','NTR']
+
+
+const newArr = arr.forEach(
+	(element,index,array)=>{
+    console.log(element,index,array)
+    return index
+})  // behave like a for of loop
+
+console.log(arr)
