@@ -126,3 +126,45 @@ const newArr = arr.forEach(
 })  // behave like a for of loop
 
 console.log(arr)
+
+
+// closure is the concept where we wrap 2 function toagther such that inner function have access to outer function 
+variables and can make changes without directly chaanging the varible
+function outer(){
+ let count =0
+ return function (){
+	count+=1
+	console.log(count)
+ }
+}
+const counter  = outer()
+counter()
+counter()
+counter()
+counter()
+1,2,3,4
+
+
+
+
+for (var i=0;i<5;i++){
+	setTimeout(()=>{console.log(i)},2000)
+  console.log(i)
+}
+
+/** 
+
+var
+	5
+  let
+	0{}
+  1{}
+  2{}
+  3{}
+  4{}
+  
+*/
+
+
+
+-------------------------------------------------------------------------------------------------
