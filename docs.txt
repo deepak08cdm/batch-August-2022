@@ -168,3 +168,6 @@ var
 
 
 -------------------------------------------------------------------------------------------------
+id  // is the unique name given to the tag and this attribute is universally available for all tag
+class // this is the name given to tag that carry same css (for reusalibility) this attribute is universally available for all tag
+style // this attribite used for giving inline style to the tag	
