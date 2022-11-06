@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+span {
+  display: block;
+}
+.flexContainer{
+	display:flex;
+	flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    height:1000px;
+    align-content:flex-start
+}
+.child{
+	height: 200px;
+    width: 200px;
+}
+</style>
+</head>
+<body>
+
+<h1>Display span elements as block elements</h1>
+
+
+<div class="flexContainer">
+  <div class="child" style="flex-grow:1" >
+  	1.
+      <img src="https://res.cloudinary.com/dz5ph4yjy/image/upload/v1665074302/cld-sample-		2.jpg" alt="no image" height="90%" width="90%">
+  </div>
+  <div class="child">
+  	2.
+      <img src="https://res.cloudinary.com/dz5ph4yjy/image/upload/v1665074302/cld-sample-		2.jpg" alt="no image" height="90%" width="90%">
+  </div>
+  <div class="child">
+  	3.
+      <img src="https://res.cloudinary.com/dz5ph4yjy/image/upload/v1665074302/cld-sample-		2.jpg" alt="no image" height="90%" width="90%">
+  </div>
+  <div class="child">
+  	4.
+      <img src="https://res.cloudinary.com/dz5ph4yjy/image/upload/v1665074302/cld-sample-		2.jpg" alt="no image" height="90%" width="90%">
+  </div>
+  <div class="child" >
+  	5.
+      <img src="https://res.cloudinary.com/dz5ph4yjy/image/upload/v1665074302/cld-sample-		2.jpg" alt="no image" height="90%" width="90%">
+      <p>
+      	hello this is just extra texty fro flex grow
+      </p>
+  </div>
+  <div class="child" style="flex-shrink:1">
+  	6.
+      <img src="https://res.cloudinary.com/dz5ph4yjy/image/upload/v1665074302/cld-sample-		2.jpg" alt="no image" height="90%" width="90%">
+  </div>
+</div>
+
+</body>
+</html>
