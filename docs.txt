@@ -171,3 +171,43 @@ var
 id  // is the unique name given to the tag and this attribute is universally available for all tag
 class // this is the name given to tag that carry same css (for reusalibility) this attribute is universally available for all tag
 style // this attribite used for giving inline style to the tag	
+
+
+// previous version -> npm i create-react-app =>  create-react-app client
+// latest version npx create-react-app client
+
+// framework vs library
+// node => node is a run time env for running js code on server side
+// server vs client => react is called as client side library
+
+				restapi   FE pages     runtime env to run any js application on server
+MERN (mongodb Express js react js and node js)
+
+//node js
+// react code is start on server side and projected to the client side.
+
+// client side rendering - server side rendering
+
+
+// disadvantage of angular / vue 
+
+1.we do direct dom manupulation in these framworks / dom reloading
+// using virtual dom:- 
+// code reduction in single file and reuseability 
+
+// JSX:- javascripl xml
+// tag for react was recreated based on concept of xml
+
+//jsx rules:-
+// we have single opening and closing tag inside return
+// when ever we want to use javascript expression we enclose it in {} bracket
+
+// problem with react:- 
+//React cannot understand change in normal variable :- so cause of this UI is not refreshed
+// React has a speacial variable called as state variable
+
+//React hooks
+// useState(initial value) and return array with 2 elements ; 1st one is state variable and 2nd is function that update this state variabel
+
+//uncontrolled component :- when we dont use value attribute in input
+//controlled when we control value of input tag
