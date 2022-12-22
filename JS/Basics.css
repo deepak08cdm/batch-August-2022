@@ -1,0 +1,42 @@
+.divmain{
+    display: inline-block;
+    width:400px;
+    height:200px;
+}
+.mainbutton{
+    display: block;
+    height:20px;
+    width:100px;
+}
+.row div div{
+    border:2px solid black
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    background-color: DodgerBlue;
+    justify-content: space-between;
+}
+.navStart{
+    display: flex;
+    align-content: center;
+    flex-grow: 0.5;
+}
+.navEnd{
+    display: flex;
+    align-content: center;
+    flex-shrink: 2;
+}
+
+table,td,thead{
+    border:1px solid black
+}
+
+tbody tr:nth-child(odd){
+    display: none;
+}
+
+
+#main .nav .navStart{
+
+}
