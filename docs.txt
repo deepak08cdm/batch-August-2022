@@ -211,3 +211,14 @@ MERN (mongodb Express js react js and node js)
 
 //uncontrolled component :- when we dont use value attribute in input
 //controlled when we control value of input tag
+
+
+//useEffect hooks:
+
+useEffect(()=>{},[]):- componentDidMount
+useEffect(()=>{}) :- componentDidUpdate
+useEffect(()=>{},[state]) :- componentDidUpdate
+lifeCycleMethod :- from point of start till point of deletion
+componentDidMount :- as soon as component load on dom this function trigger
+componentDidUpdate:-
+componentWillUnmount:-
