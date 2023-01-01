@@ -16,16 +16,14 @@ const bull = (
 );
 
 export default function BasicCard(props) {
-  console.log(props)
   const handleClick = ()=>{
-    console.log(props.receiver)
-    props.receiver('comments from child')
+    props.receiver(props.data.id)
   }
   return (
     <Card sx={{ minWidth: 275, minHeight: 200 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {props.index}
+          {props.data.id}
         </Typography>
         <Typography variant="h5" component="div">
         {props?.data?.title}

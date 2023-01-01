@@ -5,7 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Main from './Main';
 import BasicCard from './Components/Card/Card';
 import { useEffect, useState } from 'react';
-
+import Dialog from './Components/Dialog/Dialog'
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const mockData = [
   {
     message:'welcome to react session',
@@ -25,23 +27,56 @@ const mockData = [
 ]
 function App() {
   const [data, setData] = useState([])
-  let text = 'wecome to myb class'
-  const mockApi = ()=>{
-    fetch('https://jsonplaceholder.typicode.com/posts').then((result)=>{return result.json()}).then((x)=>{setData(x)})
-    // setTimeout(()=>{setData(mockData)},10000)
+  const [openDialog, setOpenDialog] = useState(false)
+  const [comments, setComments] = useState([])
+  const [loader, setLoader] = useState(false)
+  const [postId,setPostId] = useState(null)
+  
+
+  const mockApi = async()=>{
+    const result = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const x = await result.json()
+    setData(x)
   }
-  // mockApi()
+
   useEffect(()=>{
     mockApi()
-    text='this has changed'
-  },[])
+  },[]) // componentDidMount
+
+  useEffect(()=>{
+    // alert('componentDidUpdate universal')
+  }) // componentDidUpdate Universal
+  useEffect(()=>{
+  //  alert('compoenentDidUpdated on comments') 
+  if(comments.length>0){
+    setLoader(false)
+    setOpenDialog(true)
+  }
+  },[comments])
+  // useEffect(()=>{
+  //   callCommments(postId)
+  // },[postId])
+
+  const callCommments = async(id)=>{
+    const result = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+    const x = await result.json()
+    setComments(x)
+  }
   const receiver = (val)=>{
-    console.log('app function',val)
+    setTimeout(()=>{callCommments(val)},2000)
+    // setPostId(val)
+    setLoader(true)
+    // setOpenDialog(true)
+  }
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
+  const handleCloseLoader = ()=>{
+    setLoader(false)
   }
   return (
     <div className="App">
       <header className="App-header">
-        {text}
         {/* {data.length == 0 && <button onClick={mockApi}>load ui</button>} */}
         {/* <Login val='hello' asd='byebye' qwe={callData}></Login> */}
         {/* <BasicCard data={data}/> */}
@@ -52,6 +87,14 @@ function App() {
             </div>
           )
         })}
+        <Dialog open={openDialog} handleClose={handleClose} data={comments}/>
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loader}
+        onClick={handleCloseLoader}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       </header>
     </div>
   );

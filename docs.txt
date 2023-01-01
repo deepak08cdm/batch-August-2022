@@ -216,8 +216,8 @@ MERN (mongodb Express js react js and node js)
 //useEffect hooks:
 
 useEffect(()=>{},[]):- componentDidMount
-useEffect(()=>{}) :- componentDidUpdate
-useEffect(()=>{},[state]) :- componentDidUpdate
+useEffect(()=>{}) :- componentDidUpdate based on universal update
+useEffect(()=>{},[state]) :- componentDidUpdate based on condition/state -- when ever state value change useEffect will be triggered
 lifeCycleMethod :- from point of start till point of deletion
 componentDidMount :- as soon as component load on dom this function trigger
 componentDidUpdate:-
