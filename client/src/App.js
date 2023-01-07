@@ -17,6 +17,10 @@ function App() {
 
 export default App;
 
+/**
+ * componentDidMount   useEffect(()=>{},[])
+ * componentDidUpdate  useEffect(()=>{}) on all state changed  / useEffect(()=>{},[array of state]) on particular state change
+ */
 
 // props are used to send data from parent to child and there is no direct process to send datd from child to parent
 // to share data

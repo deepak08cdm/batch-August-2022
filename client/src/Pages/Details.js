@@ -32,13 +32,13 @@ function Details(props) {
         setDataPerPage(postPerPage)
         console.log(postPerPage)
     }
-  },[data,selectedPage])
+  },[data, selectedPage])
 //   useEffect(()=>{
 //     let start_index = 10*(selectedPage-1)
-//         let end_index = 10*selectedPage 
-//         let postPerPage = data.slice(start_index,end_index)
-//         setDataPerPage(postPerPage)
-//         console.log(postPerPage)
+//     let end_index = 10*selectedPage 
+//     let postPerPage = data.slice(start_index,end_index)
+//     setDataPerPage(postPerPage)
+//     console.log(postPerPage)
 //   },[selectedPage])
   const handlePageChange = (e,pageNo)=>{
     setSelectedPage(pageNo)
