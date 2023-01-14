@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
+  const navigate  = useNavigate()
+  const handleLoginClick = ()=>{
+    navigate('/')
+  }
+  const handleSignupClick=()=>{
+    navigate('/signup')
+  }
   return (
     <header className="p-3 bg-dark text-white">
     <div className="container">
@@ -22,8 +30,8 @@ function Navbar() {
         </form>
 
         <div className="text-end">
-          <button type="button" className="btn btn-outline-light me-2">Login</button>
-          <button type="button" className="btn btn-warning">Sign-up</button>
+          <button type="button" className="btn btn-outline-light me-2" onClick={handleLoginClick}>Login</button>
+          <button type="button" className="btn btn-warning" onClick={handleSignupClick}>Sign-up</button>
         </div>
       </div>
     </div>

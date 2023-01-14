@@ -8,12 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Dialog from '../Components/Dialog/Dialog'
 import Pagination from '@mui/material/Pagination';
+import { useNavigate } from 'react-router-dom';
 
 function Details(props) {
   const [data, setData] = useState([])
   const [noOfPages, setNoOfPages] = useState(0)
   const [selectedPage, setSelectedPage] = useState(1)
   const [dataPerPage, setDataPerPage] = useState([])
+  const navigate = useNavigate()
   const mockApi = async()=>{
     const result = await fetch('https://jsonplaceholder.typicode.com/posts')
     const x = await result.json()
@@ -22,7 +24,13 @@ function Details(props) {
     setNoOfPages(no_of_pages)
   }
   useEffect(()=>{
-    mockApi()
+    const authenticate = sessionStorage.getItem('authenticate')
+    if(authenticate){
+      mockApi()
+    }
+    else{
+      navigate('/')
+    }
   },[])
   useEffect(()=>{
     if(data.length>0){
@@ -32,7 +40,7 @@ function Details(props) {
         setDataPerPage(postPerPage)
         console.log(postPerPage)
     }
-  },[data, selectedPage])
+  },[data, selectedPage])// 
 //   useEffect(()=>{
 //     let start_index = 10*(selectedPage-1)
 //     let end_index = 10*selectedPage 
