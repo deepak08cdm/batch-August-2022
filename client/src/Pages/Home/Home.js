@@ -1,25 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Axios from 'axios'
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import {callData} from '../../Redux/Actions'
+import Card from '../../Components/Card/Card'
+import {MainContext} from '../../Providers/MainProvider'
 
 function Home(props) {
     const params = useParams()
+    const context = useContext(MainContext)
+    // console.log(context)
+    const dispatch = useDispatch()
     const history = useNavigate()
     const [empData,setEmpData] = useState([])
     const [data,setData] = useState([])
     const state  = useSelector((data)=>data)
     console.log("inisde redux",state)
-    // useEffect(()=>{
-    //     // fetchData()
-    // },[])
-
-    const fetchData = async()=>{
-        const result = await Axios.get('http://localhost:4500/users')
-        console.log(result)
-        setData(result.data)
-    }
+    useEffect(()=>{
+        if(state.UsersReducer.user.length === 0){
+            dispatch(callData)
+        }
+    },[])
 
     const searchedData = (val)=>{
         
@@ -55,6 +57,8 @@ function Home(props) {
                 </tbody>
             </table>
             <button type="submit" className="btn btn-primary" onClick={()=>history(`/add-data`)}>Add</button>
+            <input type='text' onChange={(e)=>{context.changeName(e.target.value)}}/>
+            <Card data={{id:1,title:'ahgdjha',body:'hasgfdgasv'}}/>
         </>
     );
 }

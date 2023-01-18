@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { MainContext } from '../../Providers/MainProvider';
 
 const bull = (
   <Box
@@ -16,6 +17,8 @@ const bull = (
 );
 
 export default function BasicCard(props) {
+  const context = React.useContext(MainContext)
+  console.log(context)
   const handleClick = ()=>{
     props.receiver(props.data.id)
   }
@@ -23,7 +26,7 @@ export default function BasicCard(props) {
     <Card sx={{ minWidth: 275, minHeight: 200 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {props.data.id}
+          {context.name}
         </Typography>
         <Typography variant="h5" component="div">
         {props?.data?.title}

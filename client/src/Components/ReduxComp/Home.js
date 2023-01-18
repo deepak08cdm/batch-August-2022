@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import Card from '../Card/Card'
 function Home(props) {
     const history = useNavigate()
     const data = useSelector((state)=>state.addUser.users )
@@ -47,6 +48,7 @@ function Home(props) {
                 </tbody>
             </table>
             <button type="submit" className="btn btn-primary" onClick={()=>history(`/add-data`)}>Add</button>
+            <Card data={{id:1,title:'ahgdjha',body:'hasgfdgasv'}}/>
         </>
     );
 }

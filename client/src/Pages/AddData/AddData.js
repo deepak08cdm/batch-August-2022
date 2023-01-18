@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addData } from "../../Redux/Actions";
 import Axios from 'axios'
+import {MainContext} from '../../Providers/MainProvider'
 
 function AddData(props) {
+    const context = useContext(MainContext)
+    console.log(context)
     const navigate=useNavigate()
     const dispatch = useDispatch()
     const [empName,setEmpName] = useState('')

@@ -7,12 +7,9 @@ import Home from './Pages/Home/Home'
 import AddData from './Pages/AddData/AddData'
 import { useEffect,useRef } from 'react';
 import { Route,Routes, Redirect } from 'react-router-dom';
+import MainProvider from './Providers/MainProvider';
 
 function App() {
-  const inputRef = useRef(null)
-  useEffect(()=>{
-    console.log(inputRef.current)
-  },[inputRef])
   return (
     <div className="App">
       <Navbar/>
@@ -22,7 +19,7 @@ function App() {
           {/* <Route path='/dashboard' element={<Details/>}/> */}
           {/* <Route path='/signUp' element={<Login/>}/> */}
           {/* <Route path='*' element={<Login/>}/> */}
-          <Route path={`/home`} element={<Home/>} exact/>
+          <Route path={`/home`} element={<MainProvider><Home/></MainProvider>} exact/>
           <Route path={`/add-data`} element={<AddData/>}exact/>
         </Routes>
       {/* </header> */}
