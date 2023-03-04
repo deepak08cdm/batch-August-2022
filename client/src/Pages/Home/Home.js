@@ -12,14 +12,14 @@ function Home(props) {
     const context = useContext(MainContext)
     // console.log(context)
     const dispatch = useDispatch()
-    const history = useNavigate()
+    const navigate = useNavigate()
     const [empData,setEmpData] = useState([])
     const [data,setData] = useState([])
     const state  = useSelector((data)=>data)
     console.log("inisde redux",state)
     useEffect(()=>{
         if(state.UsersReducer.user.length === 0){
-            dispatch(callData)
+            // dispatch(callData)
         }
     },[])
 
@@ -31,6 +31,10 @@ function Home(props) {
             return
         }
         setEmpData(data)
+    }
+    const handleClick = ()=>{
+        console.log('hello')
+        navigate(`/add-data`)
     }
     return (
         <>
@@ -56,7 +60,7 @@ function Home(props) {
                     )})}
                 </tbody>
             </table>
-            <button type="submit" className="btn btn-primary" onClick={()=>history(`/add-data`)}>Add</button>
+            <button type="submit" className="btn btn-primary" onClick={handleClick}>Add</button>
             <input type='text' onChange={(e)=>{context.changeName(e.target.value)}}/>
             <Card data={{id:1,title:'ahgdjha',body:'hasgfdgasv'}}/>
         </>

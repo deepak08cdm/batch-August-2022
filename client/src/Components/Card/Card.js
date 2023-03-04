@@ -26,7 +26,7 @@ export default function BasicCard(props) {
     <Card sx={{ minWidth: 275, minHeight: 200 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {context.name}
+          {context?.name}
         </Typography>
         <Typography variant="h5" component="div">
         {props?.data?.title}
