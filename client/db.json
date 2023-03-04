@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "deepak08",
+      "password": "qwerty123",
+      "name": "Deepak Sharma",
+      "gender": "Male",
+      "dob": "10-11-1996"
+    },
+    {
+      "id": 2,
+      "username": "asd",
+      "password": "asdfgh123",
+      "name": "asd ghj",
+      "gender": "Male",
+      "dob": "12-12-1988"
+    },
+    {
+      "id": 3,
+      "username": "zxc",
+      "password": "zxc123",
+      "name": "zxc bnm",
+      "gender": "Male",
+      "dob": "04-01-1991"
+    },
+    {
+      "username": "pranay",
+      "password": "pranay123",
+      "name": "Pranay shrivastav",
+      "gender": "Male",
+      "dob": "12-12-1993",
+      "id": 4
+    },
+    {
+      "username": "satish",
+      "password": "satish123",
+      "name": "satish shrivastav",
+      "gender": "Male",
+      "dob": "02-06-1993",
+      "id": 5
+    }
+  ],
+  "result": []
+}
